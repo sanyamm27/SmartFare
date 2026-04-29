@@ -1,0 +1,133 @@
+[
+  {
+    "id": "1776101421506",
+    "airline": "Vistara",
+    "price": 4569,
+    "from": "VTZ",
+    "to": "BOM",
+    "passenger": "Sanyam Kumar",
+    "status": "CANCELLED",
+    "date": "2026-04-13T17:30:21.506Z"
+  },
+  {
+    "id": "1776112095247",
+    "airline": "Air India",
+    "price": 8100,
+    "from": "BOM",
+    "to": "VTZ",
+    "passenger": "Sanyam Kumar",
+    "status": "CONFIRMED",
+    "date": "2026-04-13T20:28:15.248Z"
+  },
+  {
+    "pnr": "7B1KC2",
+    "flightDetails": {
+      "origin": "BOM",
+      "destination": "VTZ",
+      "date": "2026-10-24",
+      "time": "15:40",
+      "flightCode": "Air India"
+    },
+    "passengers": [
+      {
+        "name": "Sanyam Kumar"
+      }
+    ],
+    "seats": [
+      "1D"
+    ],
+    "extraServices": [
+      {
+        "id": "seat-1D",
+        "name": "Seat 1D",
+        "price": 900,
+        "type": "seat"
+      }
+    ],
+    "totalAmount": 8387,
+    "status": "CONFIRMED",
+    "createdAt": "2026-04-14T10:05:50.762Z"
+  },
+  {
+    "pnr": "G5KYRV",
+    "flightDetails": {
+      "origin": "BOM",
+      "destination": "VTZ",
+      "date": "2026-10-24",
+      "time": "15:40",
+      "flightCode": "Air India"
+    },
+    "passengers": [
+      {
+        "name": "Hardik Singh"
+      }
+    ],
+    "seats": [
+      "1A"
+    ],
+    "extraServices": [
+      {
+        "id": "seat-1A",
+        "name": "Seat 1A",
+        "price": 900,
+        "type": "seat"
+      }
+    ],
+    "totalAmount": 5130,
+    "status": "CONFIRMED",
+    "createdAt": "2026-04-14T10:44:32.618Z"
+  },
+  {
+    "pnr": "858PD3",
+    "flightDetails": {
+      "origin": "BOM",
+      "destination": "VTZ",
+      "date": "2026-10-24",
+      "time": "15:40",
+      "flightCode": "Air India"
+    },
+    "passengers": [
+      {
+        "name": "JOHN DOE"
+      }
+    ],
+    "seats": [
+      "1A"
+    ],
+    "extraServices": [
+      {
+        "id": "seat-1A",
+        "name": "Seat 1A",
+        "price": 900,
+        "type": "seat"
+      },
+      {
+        "id": "m1",
+        "name": "Roasted Chicken Sandwich",
+        "price": 350,
+        "desc": "Freshly made sandwich with roasted chicken and herbs.",
+        "img": "lunch_dining",
+        "type": "meal"
+      },
+      {
+        "id": "b1",
+        "name": "Extra Cabin Bag (5kg)",
+        "price": 800,
+        "desc": "Bring an extra bag onboard.",
+        "icon": "work",
+        "type": "baggage"
+      },
+      {
+        "id": "p1",
+        "name": "Airport Lounge Access",
+        "price": 1200,
+        "desc": "Relax in comfort with priority services before your flight.",
+        "icon": "airline_seat_flat",
+        "type": "premium"
+      }
+    ],
+    "totalAmount": 11242,
+    "status": "CONFIRMED",
+    "createdAt": "2026-04-14T11:26:57.059Z"
+  }
+]

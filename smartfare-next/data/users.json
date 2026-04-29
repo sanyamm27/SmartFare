@@ -1,0 +1,16 @@
+[
+  {
+    "email": "test@test.com",
+    "name": "John Doe",
+    "phone": "9876543210",
+    "age": "30"
+  },
+  {
+    "id": "1776103989827",
+    "name": "SANYAM KUMAR",
+    "email": "sanyamkumar316@gmail.com",
+    "phone": "8925076316",
+    "age": "21",
+    "createdAt": "2026-04-13T18:13:09.827Z"
+  }
+]

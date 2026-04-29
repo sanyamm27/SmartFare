@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Secure Checkout | SMARTFARE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c3c0ff",
+                        "secondary-fixed": "#eaddff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#25005a",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#006693",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary": "#004d70",
+                        "surface-tint": "#4d44e3",
+                        "primary-container": "#4f46e5",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e5eeff",
+                        "outline-variant": "#c7c4d8",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "secondary": "#712ae2",
+                        "on-primary-fixed": "#0f0069",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001e2f",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "outline": "#777587",
+                        "on-secondary-container": "#fffbff",
+                        "secondary-container": "#8a4cfc",
+                        "on-background": "#0b1c30",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#89ceff",
+                        "on-surface": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed": "#e2dfff",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-container": "#b8e0ff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#c9e6ff",
+                        "on-surface-variant": "#464555",
+                        "primary": "#3525cd",
+                        "on-primary-container": "#dad7ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timer-pulse {
+            animation: pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-red {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 flex justify-between items-center px-6 py-3 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm font-sans antialiased">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black tracking-tight text-indigo-600 dark:text-indigo-400">SMARTFARE</span>
+<div class="hidden md:flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-500 transition-colors" href="#">Trips</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-500 transition-colors" href="#">Explore</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-500 transition-colors" href="#">Support</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors">help_outline</span>
+<div class="h-8 w-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile" class="h-full w-full object-cover" data-alt="professional headshot of a businessman in a suit against a neutral studio background, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM64ASeEkDlf9p_ZkoEIrgB49E82O8R7g0Q1gmbtaNClzisQB4D2XMmi-HKsr2-XBfyjkvhH5ASIQSJE-QstWw2SoeE5uF9PUwrN0yTY_UhJHFq6l_eQtSTJKBMv9Nkmn6syZ8BBtyq9LoguC2e_bxZcuWruGH9XQkockY8hupjY6LHHYSg7B5nrhzJVuESMkROb3jGrEPeTGamLYk5yYEnJj1686HJ-4IatT7IXv-40SUe3psD5sx3Anq117Fcv4N9p1wF8EL5bo"/>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-4 py-8 lg:flex lg:gap-8 items-start">
+<!-- Left Column: Checkout Journey -->
+<div class="flex-1 space-y-6">
+<!-- Secure Header & Timer -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-green-100 p-2 rounded-full">
+<span class="material-symbols-outlined text-green-600" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-on-surface">Secure Checkout</h1>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+                            Your payment data is encrypted and 100% secure.
+                        </p>
+</div>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-primary-fixed-dim/20 text-primary border border-primary/20 rounded-full">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="font-bold text-sm">Session expires in: <span class="ml-1 tracking-wider">09:52</span></span>
+</div>
+</div>
+<!-- SideNavBar Integration (Horizontal Stepper on Tablet/Mobile, Sidebar handled via Layout) -->
+<div class="lg:hidden flex justify-between overflow-x-auto pb-2 gap-4 border-b border-outline-variant">
+<div class="flex items-center gap-2 text-primary font-bold whitespace-nowrap"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span> Payment</div>
+<div class="flex items-center gap-2 text-outline whitespace-nowrap"><span class="material-symbols-outlined">person</span> Passenger</div>
+<div class="flex items-center gap-2 text-outline whitespace-nowrap"><span class="material-symbols-outlined">shield</span> Insurance</div>
+<div class="flex items-center gap-2 text-outline whitespace-nowrap"><span class="material-symbols-outlined">fact_check</span> Review</div>
+</div>
+<!-- Payment Selection Tiles -->
+<div class="space-y-4">
+<h2 class="text-lg font-bold text-on-surface">Payment Method</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Credit/Debit Card Tile (Active) -->
+<label class="relative flex flex-col items-center justify-center p-6 border-2 border-primary bg-primary/5 rounded-xl cursor-pointer group transition-all">
+<input checked="" class="absolute top-4 right-4 text-primary focus:ring-primary h-5 w-5" name="payment_method" type="radio"/>
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">credit_card</span>
+<span class="font-bold text-primary">Card</span>
+<div class="mt-4 flex gap-2">
+<img alt="Visa" class="h-4 opacity-70 grayscale-0" data-alt="visa credit card network logo in blue and yellow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa3JvZtnF0N7wWmsjhJrYHyP28N2OAYlS3UkjDF6AvdnDr3nLnTvK3zzfkrQ_BA0JZ9xdsBLg5PGMjdPtDj9_Uu-UcukuzK47jJRZqQ4FfgqhIK6x3RYzSI0YcYvFKeBNPi-p-y3WmDo6pYVAQ5OgN95wH9UYkQPCAdfyxtjFPViN03keh2R2VQAoZHdVRIVj5--rl00cNtFIK8O3lYvvv7cSD1jnsXj9zXlJTWxLFtOMhfx2wgpG1I_5OYUXCtOv5hzI-oQinVzY"/>
+<img alt="Mastercard" class="h-4 opacity-70 grayscale-0" data-alt="mastercard credit card network logo with overlapping red and orange circles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEd6hihGGvuVB8qDuLPP1rSoENDYZhNOFt9bDy1qm31QSKDAqSkepajEliC3PkrgFHRnAxZMZa3Ycub6X-x_p2lvUsfxS0DvFFPs_SrJZMzIAazNqtp2jbvV7ex6CTy-tafbiPfFY9EUcSI7tKYotqVg6WX8KOzbTlla_aKf9r6j7DDauBo1SoMRJjtctiADGGN0iXwRh77TIFiUwkSetUJGHlaLKGKlre0sagR1uGjQjpeQzPcWzltOJ3Zrg0LpZlmkuENl_7rvA"/>
+</div>
+</label>
+<!-- UPI Tile -->
+<label class="relative flex flex-col items-center justify-center p-6 border-2 border-outline-variant hover:border-primary/50 bg-white rounded-xl cursor-pointer group transition-all">
+<input class="absolute top-4 right-4 text-primary focus:ring-primary h-5 w-5" name="payment_method" type="radio"/>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary mb-2 text-3xl">account_balance_wallet</span>
+<span class="font-bold text-on-surface group-hover:text-primary">UPI</span>
+<span class="mt-4 text-xs text-on-surface-variant">Instant Settlement</span>
+</label>
+<!-- Net Banking Tile -->
+<label class="relative flex flex-col items-center justify-center p-6 border-2 border-outline-variant hover:border-primary/50 bg-white rounded-xl cursor-pointer group transition-all">
+<input class="absolute top-4 right-4 text-primary focus:ring-primary h-5 w-5" name="payment_method" type="radio"/>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary mb-2 text-3xl">account_balance</span>
+<span class="font-bold text-on-surface group-hover:text-primary">Net Banking</span>
+<span class="mt-4 text-xs text-on-surface-variant">All major banks</span>
+</label>
+</div>
+</div>
+<!-- Card Form Section -->
+<div class="bg-white p-8 rounded-xl border border-outline-variant shadow-sm space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card Number -->
+<div class="col-span-full relative">
+<label class="block text-xs font-bold text-primary mb-1 uppercase tracking-wider" for="card_num">Card Number</label>
+<div class="relative">
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary placeholder-outline-variant" id="card_num" placeholder="0000 0000 0000 0000" type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant">lock</span>
+</div>
+</div>
+<!-- Card Holder -->
+<div class="col-span-full md:col-span-1">
+<label class="block text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider" for="card_holder">Card Holder Name</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" id="card_holder" placeholder="John Doe" type="text"/>
+</div>
+<!-- Expiry and CVV -->
+<div class="grid grid-cols-2 gap-4 col-span-full md:col-span-1">
+<div>
+<label class="block text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider" for="expiry">Expiry</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" id="expiry" placeholder="MM / YY" type="text"/>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider" for="cvv">CVV</label>
+<div class="relative">
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" id="cvv" placeholder="•••" type="password"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant text-sm" title="3 digits on back of card">info</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="pt-6 border-t border-outline-variant">
+<label class="block text-sm font-bold text-on-surface mb-3">Add Promo Code</label>
+<div class="relative max-w-md">
+<input class="w-full pl-10 pr-24 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-surface" placeholder="Enter coupon code" type="text"/>
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant">sell</span>
+<button class="absolute right-1 top-1/2 -translate-y-1/2 px-5 py-2 bg-on-background text-white text-xs font-bold rounded-md hover:bg-slate-700 transition-colors uppercase tracking-widest">Apply</button>
+</div>
+</div>
+<!-- Pay Button -->
+<button class="w-full py-5 bg-primary text-white rounded-xl font-black text-lg tracking-widest shadow-lg hover:translate-y-[-2px] hover:shadow-xl active:scale-95 transition-all flex items-center justify-center gap-3">
+                    PAY $1,248.50
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-6 mt-4">
+<img alt="PayPal" class="h-5 opacity-40 grayscale" data-alt="paypal corporate logo with double P mark in blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA96R-YvlX-yYvSepmqfdUAH5XzFsiJmG9tvJj9CwCpldP_yX1U5rmAjZSBLYZrIwji7zAS2AyLUEsvTvJvhvz1Fe4zyppu_RDWChvKTIqC9Bv46fhKscOG0vOQitw92l5hTMrBP_BZcJ2uDo5BN1YiQaPdlvgkv_h3u68m1vQI7gh9MyXzqr1CGlb90kgpK2qpZl_1fx5LiZtqzVc150qg_hAYSH8GpBMETmX8Qq5lMKyck3Zv-Fp1jVyVWODhSyB0fd8X_DI9h2k"/>
+<img alt="Amex" class="h-6 opacity-40 grayscale" data-alt="american express blue box logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB-moDIV0z0m1jdxsN0x3DMSZgBJtus-l_c0PjQm6nqVcLptaNVXL6rgQAu-fQviM1hibivV1mBxPbZ9oDgdIakcX8NIK-roaEEx8oXN-fWS360Kw9aVcyWp3uh9LTWT0TK3GFF0a73scRTcBxKpAI4nkHH5_N923YdE2Up7BxqyolUDtSM0rsZAAtAlS6jWWqELxISTGwu9qeTUMr9-TGMYbYOQqpkVg_BTp5nOIbx8kTxpa9x9d-F0LR0VKfF3glur_VS0hM54Y"/>
+<img alt="Apple Pay" class="h-6 opacity-40 grayscale" data-alt="apple pay mobile payment logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd7nJTQFCvftntGrtyJoxvnmWDkIQ6805o9HwF_0Mp-SwEy87fKUcY5mD2Fd2yRjKUBwVe0Q4qqRJg91hx4rwa6NTuKElA3x0oAN5ot65WMNaLhVAt58myMxOBxwHPzOyUev5YnSIwYMPHcWw3Gq8ZzBr9UY9xnXCcyHLxqOc3wMg4d9rkXakc4-lQFc1rF6N8Yx35j9V7gV2yu62jhmAt1-CiQPUkf-BSZW163vqeBlOigPOCuRYSImp9vkXnCsZJIoMfgx-UDPI"/>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<aside class="w-full lg:w-96 mt-8 lg:mt-0 space-y-6">
+<!-- SideNavBar Component (Desktop Sidebar) -->
+<div class="hidden lg:flex flex-col bg-slate-50 dark:bg-slate-950 p-4 border border-slate-200 dark:border-slate-800 rounded-xl space-y-2">
+<div class="px-4 py-3 mb-2 border-b border-slate-200">
+<div class="text-lg font-bold text-slate-800 dark:text-slate-200">Booking ID</div>
+<div class="text-indigo-600 dark:text-indigo-400 text-xs font-mono">SF-992831</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-indigo-600 dark:text-indigo-400 font-bold bg-indigo-50 dark:bg-indigo-900/20 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-sm">Payment</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm">Passenger</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-sm">Insurance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="text-sm">Review</span>
+</a>
+</div>
+<!-- Price & Summary Sidebar -->
+<div class="sticky top-24 bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-5 bg-surface-container">
+<h3 class="font-bold text-on-surface">Flight Summary</h3>
+</div>
+<!-- Flight Path Graphic -->
+<div class="p-6 space-y-6">
+<div class="flex items-center justify-between">
+<div class="text-center">
+<div class="text-2xl font-black text-primary">LHR</div>
+<div class="text-[10px] uppercase font-bold text-on-surface-variant">London</div>
+</div>
+<div class="flex-1 flex flex-col items-center px-4">
+<span class="text-[10px] text-on-surface-variant font-medium mb-1">Non-stop • 8h 15m</span>
+<div class="w-full h-[2px] bg-outline-variant relative">
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary rotate-90 text-sm" style="font-variation-settings: 'FILL' 1;">flight</span>
+</div>
+</div>
+<div class="text-center">
+<div class="text-2xl font-black text-primary">JFK</div>
+<div class="text-[10px] uppercase font-bold text-on-surface-variant">New York</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface border border-outline-variant/30 rounded-lg">
+<div class="h-10 w-10 bg-white border border-outline-variant rounded-md flex items-center justify-center overflow-hidden">
+<img alt="Airline logo" class="h-8 object-contain" data-alt="British Airways minimalist flight carrier logo with blue and red ribbon branding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE2UgTCjkMKRX_tPUAvxZkRKbIoraUTh_0MOUvTKoKIkOKDR08UTMr7g9kA9b8bmtOJzDi-kM1pC8qg2LvnW7U4VPxSttgcWErkluGvx9bw4LrctE8AO7ffO-4pVgyH0l-_5GJzIgOF3ncz6JwMto7evxdJfqjjLoMmS23Kn9ZxjiRM7pugk6uX8qPgTVNXFjToXV2oP0nJCn46YWHrrhc5mJM1L3M_WT3HdAMXvx7Qy1_4wW_vS7H4j6cvfX3e9Tr5TybZ41KF5g"/>
+</div>
+<div>
+<div class="text-sm font-bold text-on-surface">British Airways</div>
+<div class="text-xs text-on-surface-variant">BA217 • Economy Classic</div>
+</div>
+</div>
+<div class="space-y-3 pt-6 border-t border-outline-variant">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Base Fare (1 Adult)</span>
+<span class="font-medium text-on-surface">$1,020.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Taxes &amp; Fees</span>
+<span class="font-medium text-on-surface">$228.50</span>
+</div>
+<div class="flex justify-between text-sm text-green-600 font-medium">
+<span>Promo Discount</span>
+<span>-$0.00</span>
+</div>
+<div class="pt-4 flex justify-between items-end border-t border-dashed border-outline-variant">
+<div>
+<div class="text-xs font-bold text-on-surface-variant uppercase">Total Amount</div>
+<div class="text-xs text-primary font-medium">Inclusive of all taxes</div>
+</div>
+<div class="text-3xl font-black text-on-surface">$1,248.50</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-slate-50 flex items-center gap-3">
+<span class="material-symbols-outlined text-indigo-600 text-sm">verified_user</span>
+<span class="text-[10px] text-slate-500 font-medium uppercase tracking-widest">PCI-DSS Compliant Transaction</span>
+</div>
+</div>
+</aside>
+</main>
+<!-- Success Message / Bottom Signals (Mobile only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full p-4 bg-white border-t border-outline-variant flex items-center justify-between z-40">
+<div>
+<div class="text-xs font-bold text-on-surface-variant uppercase">Total to pay</div>
+<div class="text-xl font-black text-primary">$1,248.50</div>
+</div>
+<button class="px-8 py-3 bg-primary text-white font-bold rounded-lg shadow-lg active:scale-95 transition-transform">
+            PAY NOW
+        </button>
+</div>
+</body></html>

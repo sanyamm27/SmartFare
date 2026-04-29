@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkyHigh Premium - Boarding Pass</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; padding: 0; }
+            .print-container { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .perforated-line {
+            background-image: linear-gradient(to bottom, #cbd5e1 50%, rgba(255,255,255,0) 0%);
+            background-position: right;
+            background-size: 2px 12px;
+            background-repeat: repeat-y;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "on-tertiary-fixed": "#001e2f",
+                        "surface-container-high": "#dce9ff",
+                        "on-surface-variant": "#464555",
+                        "on-secondary-container": "#fffbff",
+                        "on-surface": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#e2dfff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#25005a",
+                        "inverse-surface": "#213145",
+                        "tertiary": "#004d70",
+                        "background": "#f8f9ff",
+                        "tertiary-container": "#006693",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "tertiary-fixed": "#c9e6ff",
+                        "surface-dim": "#cbdbf5",
+                        "outline": "#777587",
+                        "surface-tint": "#4d44e3",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "primary": "#3525cd",
+                        "on-tertiary-container": "#b8e0ff",
+                        "secondary-fixed": "#eaddff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#4f46e5",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#8a4cfc",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#0f0069",
+                        "inverse-primary": "#c3c0ff",
+                        "error": "#ba1a1a",
+                        "secondary": "#712ae2",
+                        "tertiary-fixed-dim": "#89ceff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "outline-variant": "#c7c4d8",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-white dark:bg-slate-950 font-sans text-sm tracking-tight border-b border-slate-200 dark:border-slate-800 flat no shadows no-print">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-5xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-indigo-700 dark:text-indigo-300">
+                SkyHigh Premium
+            </div>
+<div class="flex items-center gap-6">
+<a class="text-indigo-700 dark:text-indigo-400 font-semibold cursor-pointer active:opacity-70 transition-colors">Boarding Pass</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors cursor-pointer active:opacity-70">My Flights</a>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<div class="flex-1 flex max-w-7xl mx-auto w-full">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-full bg-slate-50 dark:bg-slate-900 font-sans text-sm h-screen w-64 border-r border-slate-200 dark:border-slate-800 flat no-print">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<img alt="Passenger Avatar" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="professional headshot of a smiling man in a business suit against a clean studio background for corporate profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnGlLnNy6BpDQsrZ-DwVtEJJCvaIoVx7LdliXk5tpMsseA6j88mc6BhYyoNDZhcz8Zh36YI76LYcMRk-aNuiEMzbdWiM89fyqbRMu-i35KndMmN7HjT4HkYfkN2GST4T-R83o67eJRZNhV6CR5B7b_36N6_9W0Q0ziGK3aZ4Ay2qUi90OeHf9FaUl7lRMYZHIGHD0MVKSuKg58B1xwVgazQ8mmcEfv_DVmD6uHuXocBaWe6VzZ2FqWt1rvkvA-n00DigV2dN90UYY"/>
+<div>
+<div class="text-lg font-bold text-indigo-700">Welcome back</div>
+<div class="text-[10px] uppercase tracking-wider text-slate-400">Gold Member Status</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-indigo-700 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20 border-r-4 border-indigo-600 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+                        Boarding Pass
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="flight_takeoff">flight_takeoff</span>
+                        My Flights
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                        Travel Docs
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                        Settings
+                    </a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-4 md:p-12 flex flex-col items-center">
+<div class="no-print w-full max-w-4xl flex justify-between items-center mb-8">
+<h1 class="text-2xl font-bold tracking-tight">Your Digital Boarding Pass</h1>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 transition-all font-semibold shadow-lg shadow-primary/20" onclick="window.print()">
+<span class="material-symbols-outlined text-lg" data-icon="print">print</span>
+                    Print Ticket
+                </button>
+</div>
+<!-- Boarding Pass Container -->
+<div class="print-container w-full max-w-4xl bg-white border border-slate-200 rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+<!-- Main Ticket -->
+<div class="flex-[2.5] p-8 relative">
+<!-- Brand Header -->
+<div class="flex justify-between items-start mb-8">
+<div class="space-y-1">
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tighter uppercase italic">SMARTFARE</h2>
+<p class="text-xs font-bold text-slate-500 tracking-[0.2em] uppercase">Premium Economy Class</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-slate-400 uppercase font-bold">Booking Reference</p>
+<p class="mono text-lg font-bold text-on-surface">SF-992831</p>
+</div>
+</div>
+<!-- Journey Detail -->
+<div class="flex justify-between items-center mb-12">
+<div class="flex flex-col">
+<span class="text-6xl font-black tracking-tighter">LHR</span>
+<span class="text-sm font-medium text-slate-500">London Heathrow</span>
+</div>
+<div class="flex flex-col items-center flex-1 px-8">
+<div class="w-full flex items-center gap-2">
+<div class="h-[2px] bg-slate-200 flex-1"></div>
+<span class="material-symbols-outlined text-slate-400 transform rotate-90" data-icon="flight">flight</span>
+<div class="h-[2px] bg-slate-200 flex-1"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400 mt-2 tracking-widest uppercase">Flight SH-402</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-6xl font-black tracking-tighter">JFK</span>
+<span class="text-sm font-medium text-slate-500 text-right">John F. Kennedy</span>
+</div>
+</div>
+<!-- Passenger Info Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Passenger Name</p>
+<p class="font-bold text-lg leading-tight">ALEXANDER D. RYBACK</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Gate</p>
+<p class="font-bold text-lg leading-tight">B24</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Boarding Time</p>
+<p class="font-bold text-lg leading-tight">08:45 AM</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Departure</p>
+<p class="font-bold text-lg leading-tight">09:30 AM</p>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="mt-12 pt-8 border-t border-slate-100 flex items-end justify-between">
+<div class="flex gap-12">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-bold">Seat</span>
+<span class="mono text-3xl font-bold">12A</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-bold">Zone</span>
+<span class="mono text-3xl font-bold">2</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<img alt="Barcode" class="h-16 grayscale opacity-80" data-alt="clear black and white linear barcode for digital scanning on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAomvbB_pfHzMrIyUKbQWC2UmgQdG-dw2RgmNUuibENnDGdjaH8_wgy4ZlpA3bbnLXoS0kM4SXipUaZYjO0oFBMoCekWLSqEMpA7g1NfC6ipgij_MUoIEph3mQwl1wU86fNOMaGJSWuFVISOZ41ziXoj4PFUSAM1nmjuoFedG7AKrfiMhDfRXvNrPMBL-wj8ODwjLmm0QbLdRHrlvyw57EMEc7l-8GvM2MsmYvM-b_wu9hlLga8rlppG0r4gCtAvD3vMKOZVrRFAeA"/>
+<span class="mono text-[10px] mt-1 tracking-[0.4em] text-slate-400">928310040212</span>
+</div>
+</div>
+</div>
+<!-- Perforated Divider (Visual) -->
+<div class="perforated-line w-[2px] hidden md:block"></div>
+<div class="h-[2px] w-full border-t-2 border-dashed border-slate-300 md:hidden"></div>
+<!-- Passenger Stub -->
+<div class="flex-1 bg-slate-50 p-8 border-l border-slate-100 flex flex-col">
+<div class="mb-6">
+<h3 class="text-sm font-black uppercase italic tracking-tighter text-slate-800">SMARTFARE</h3>
+<p class="text-[9px] font-bold text-slate-400 uppercase">Passenger Receipt</p>
+</div>
+<div class="space-y-4 mb-8">
+<div>
+<p class="text-[9px] text-slate-400 uppercase font-bold">Passenger</p>
+<p class="font-bold text-sm leading-tight">RYBACK / ALEXANDER D.</p>
+</div>
+<div class="flex justify-between">
+<div>
+<p class="text-[9px] text-slate-400 uppercase font-bold">Flight</p>
+<p class="font-bold text-sm leading-tight">SH-402</p>
+</div>
+<div>
+<p class="text-[9px] text-slate-400 uppercase font-bold">Seat</p>
+<p class="mono font-bold text-sm leading-tight">12A</p>
+</div>
+</div>
+<div class="flex justify-between">
+<div>
+<p class="text-[9px] text-slate-400 uppercase font-bold">From</p>
+<p class="font-bold text-sm leading-tight">LHR</p>
+</div>
+<div>
+<p class="text-[9px] text-slate-400 uppercase font-bold">To</p>
+<p class="font-bold text-sm leading-tight">JFK</p>
+</div>
+</div>
+</div>
+<div class="mt-auto flex flex-col items-center">
+<img alt="QR Code" class="w-24 h-24 grayscale border border-slate-200 p-1" data-alt="high contrast black and white pixelated QR code for digital authentication on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQK7rP-xWG3alECbjzcr-dhlrXhqR7KUb9mgWy16qTbCUopvBGa_huiUx1roDYA_vIXA8nyT--fDO0sqAofXhqXezr_QfpKBXpeP4gzyBKac4NMBZIlquQjVzJkTCMkTA7z8g7pE07nkHUcYo7K1K6SDKB6piQwPgMB6riWtHJcqdBg5OoDNiCUtH1SHbpKRvKMTPJq4Z1damuc3mHCIO5HqlDdZmQh-e5dXrleXlDrQeAAhsN0s3BZShKNu5JCJ9gLymPvkm48fA"/>
+<p class="mono text-[8px] mt-2 text-slate-400">PNR: SF-992831</p>
+</div>
+</div>
+</div>
+<!-- Print Instructions -->
+<div class="no-print mt-8 text-center text-slate-400 text-sm max-w-xl">
+<p>Ensure that "Background Graphics" is enabled in your print settings to capture the full visual experience. This ticket is a valid digital travel document.</p>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-950 full-width py-8 border-t border-dashed border-slate-300 dark:border-slate-700 flex flex-col items-center justify-center gap-4 w-full mt-auto no-print">
+<div class="flex gap-8 text-[11px] font-light text-slate-400 uppercase tracking-widest">
+<a class="no-underline hover:text-slate-900 dark:hover:text-slate-100 transition-opacity duration-300">Support</a>
+<a class="no-underline hover:text-slate-900 dark:hover:text-slate-100 transition-opacity duration-300">Privacy Policy</a>
+<a class="no-underline hover:text-slate-900 dark:hover:text-slate-100 transition-opacity duration-300">Terms of Carriage</a>
+</div>
+<p class="text-[11px] font-light text-slate-400 uppercase tracking-widest text-center px-4">
+            © 2024 SkyHigh Airways. All rights reserved. Printer-friendly digital document.
+        </p>
+</footer>
+</body></html>

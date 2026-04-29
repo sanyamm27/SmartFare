@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flight Results | SMARTFARE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#8a4cfc",
+                      "secondary": "#712ae2",
+                      "surface-dim": "#cbdbf5",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#004d70",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "primary": "#3525cd",
+                      "outline": "#777587",
+                      "on-secondary-fixed-variant": "#5a00c6",
+                      "tertiary-container": "#006693",
+                      "on-primary-fixed": "#0f0069",
+                      "inverse-primary": "#c3c0ff",
+                      "surface": "#f8f9ff",
+                      "primary-fixed": "#e2dfff",
+                      "tertiary-fixed-dim": "#89ceff",
+                      "secondary-fixed-dim": "#d2bbff",
+                      "on-secondary-fixed": "#25005a",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "secondary-fixed": "#eaddff",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary-container": "#b8e0ff",
+                      "tertiary-fixed": "#c9e6ff",
+                      "surface-container": "#e5eeff",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#eff4ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-bright": "#f8f9ff",
+                      "on-surface": "#0b1c30",
+                      "on-tertiary-fixed": "#001e2f",
+                      "outline-variant": "#c7c4d8",
+                      "on-primary-container": "#dad7ff",
+                      "primary-container": "#4f46e5",
+                      "on-surface-variant": "#464555",
+                      "surface-tint": "#4d44e3",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#004c6e",
+                      "inverse-surface": "#213145",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-background": "#0b1c30",
+                      "background": "#f8f9ff",
+                      "on-secondary-container": "#fffbff",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#d3e4fe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-indigo-900/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-white/10 shadow-xl">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black tracking-tighter bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent">SMARTFARE</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-white border-b-2 border-indigo-400 pb-1 font-medium tracking-tight text-sm" href="#">Explore</a>
+<a class="text-indigo-200/70 hover:text-white transition-colors font-medium tracking-tight text-sm" href="#">My Bookings</a>
+<a class="text-indigo-200/70 hover:text-white transition-colors font-medium tracking-tight text-sm" href="#">Support</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-indigo-200/70 hover:bg-white/10 p-2 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-indigo-200/70 hover:bg-white/10 p-2 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="ml-2 bg-indigo-500 hover:bg-indigo-400 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all active:scale-95">
+                    Sign In
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-6 pt-28 pb-20">
+<!-- Search Info Summary Bar -->
+<div class="mb-8 flex flex-col md:flex-row justify-between items-end gap-4">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-on-surface mb-1">London (LHR) to New York (JFK)</h1>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span> Oct 24, 2024 • 1 Passenger • Economy
+                </p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filters
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">swap_vert</span> Sort: Best
+                </button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Flight Results Column -->
+<div class="w-full lg:w-3/4 flex flex-col gap-6" id="dynamic-flights">
+<!-- Flight Card 1 -->
+<div class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-surface-container transition-all hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary to-secondary"></div>
+<div class="p-6">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<!-- Airline & Flight Info -->
+<div class="flex items-center gap-6 w-full md:w-auto">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Delta Logo" class="w-10 h-10 object-contain" data-alt="minimalist logo of a major international airline featuring geometric red and blue shapes on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbZX1hUtLst6unDR1QCly9YhNcuRB7Vb2CDO0hEO6sSifI3XJ3bNQnF8l_8PhC95jcGGjntW2k7HJvTBEqPtKcuA7IxlOnz89fGvm9IVj9sSyPv5RzaIlILtfFc8nXfVy4pei12_WH3OQhpKdC7kxUjeh7ZDYuWCVxy8XpqcIJ_FGEuBrwwNYbO6cfUyQqzo5TxpUATWuCW6rMlEGRFy1GTtfoZ1a-QYhh8ia-pgxc-dIlEpskS4_aTQMh0PFf98AgM8pkfYPAnB0"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Delta Air Lines</span>
+<span class="text-xs text-outline font-medium">DL 4322 • Boeing 787</span>
+</div>
+</div>
+<!-- Schedule -->
+<div class="flex flex-1 items-center justify-between gap-12 w-full">
+<div class="text-center md:text-left">
+<div class="text-xl font-extrabold">10:20</div>
+<div class="text-sm font-semibold text-on-surface-variant">LHR</div>
+</div>
+<div class="flex-1 flex flex-col items-center relative">
+<span class="text-[10px] font-bold text-outline uppercase mb-1">7h 40m</span>
+<div class="w-full h-[2px] bg-outline-variant relative">
+<div class="absolute top-1/2 left-0 -translate-y-1/2 w-2 h-2 rounded-full border-2 border-outline-variant bg-surface"></div>
+<div class="absolute top-1/2 right-0 -translate-y-1/2 w-2 h-2 rounded-full border-2 border-outline-variant bg-surface"></div>
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary bg-surface px-1 text-lg" style="font-variation-settings: 'FILL' 1;">flight</span>
+</div>
+<span class="text-[10px] font-bold text-secondary mt-1 uppercase">Non-stop</span>
+</div>
+<div class="text-center md:text-right">
+<div class="text-xl font-extrabold">13:00</div>
+<div class="text-sm font-semibold text-on-surface-variant">JFK</div>
+</div>
+</div>
+<!-- Action -->
+<div class="flex flex-col items-end gap-1 w-full md:w-auto">
+<div class="text-2xl font-black text-primary">$542</div>
+<button class="w-full md:w-auto bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm tracking-tight hover:bg-secondary transition-all active:scale-95" onclick="this.parentElement.parentElement.parentElement.nextElementSibling.classList.toggle('hidden')">
+                                    View Fares
+                                </button>
+</div>
+</div>
+</div>
+<!-- Expanded Fares -->
+<div class="hidden border-t border-surface-container bg-surface-container-low p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Saver -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-on-surface mb-4">Economy Saver</h3>
+<ul class="space-y-3 mb-6">
+<li class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> 1 Personal item
+                                        </li>
+<li class="flex items-center gap-2 text-xs text-outline">
+<span class="material-symbols-outlined text-outline text-sm">cancel</span> No checked bag
+                                        </li>
+<li class="flex items-center gap-2 text-xs text-outline">
+<span class="material-symbols-outlined text-outline text-sm">cancel</span> Non-refundable
+                                        </li>
+</ul>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-lg font-bold text-on-surface">$542</span>
+<button class="px-4 py-2 rounded-lg border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-all" onclick="selectFare('Economy Saver', 542)">Select</button>
+</div>
+</div>
+<!-- Flex -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border-2 border-secondary relative flex flex-col justify-between">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Recommended</div>
+<div>
+<h3 class="font-bold text-on-surface mb-4">Economy Flex</h3>
+<ul class="space-y-3 mb-6">
+<li class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Standard seat selection
+                                        </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> 1 Checked bag (23kg)
+                                        </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Changeable with fee
+                                        </li>
+</ul>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-lg font-bold text-on-surface">$685</span>
+<button class="px-4 py-2 rounded-lg bg-secondary text-white font-bold text-xs hover:opacity-90 transition-all" onclick="selectFare('Economy Flex', 685)">Select</button>
+</div>
+</div>
+<!-- Premium -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-on-surface mb-4">Premium Cabin</h3>
+<ul class="space-y-3 mb-6">
+<li class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Extra legroom
+                                        </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 2 Checked bags
+                                        </li>
+<li class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Priority boarding
+                                        </li>
+</ul>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-lg font-bold text-on-surface">$1,120</span>
+<button class="px-4 py-2 rounded-lg border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-all" onclick="selectFare('Premium Cabin', 1120)">Select</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Flight Card 2 (Virgin) -->
+<div class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-surface-container transition-all hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary to-secondary"></div>
+<div class="p-6">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-6 w-full md:w-auto">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Virgin Logo" class="w-10 h-10 object-contain" data-alt="vibrant red cursive logo of a premium transatlantic airline on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD2h2yQVYWQhEa-O-OwUWoy9VydfdECgvBO5oIvBZ7isTDYMxLhAQlYbh77oX6y0BR1GRcBxXY4W50yCx-0YL362p0fVOfLcIllAFIeKnjoPYA5WLoUfzaGuO1QJMPtzGcdP3cGCGmnHadMTxyVMDHtHSC2vf-6M6zKYRcD8LEaxFhmH9XFy1X_RkzX6GinSyOxHXZzL77qdFfsakaNMGXZZ5I6kTldp5JKiAKc8WP7gAaAMl4t9LjNn0tu6f334j49Pl_zq8WA0Q"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Virgin Atlantic</span>
+<span class="text-xs text-outline font-medium">VS 3 • Airbus A350</span>
+</div>
+</div>
+<div class="flex flex-1 items-center justify-between gap-12 w-full">
+<div class="text-center md:text-left">
+<div class="text-xl font-extrabold">14:55</div>
+<div class="text-sm font-semibold text-on-surface-variant">LHR</div>
+</div>
+<div class="flex-1 flex flex-col items-center relative">
+<span class="text-[10px] font-bold text-outline uppercase mb-1">8h 15m</span>
+<div class="w-full h-[2px] bg-outline-variant relative">
+<div class="absolute top-1/2 left-0 -translate-y-1/2 w-2 h-2 rounded-full border-2 border-outline-variant bg-surface"></div>
+<div class="absolute top-1/2 right-0 -translate-y-1/2 w-2 h-2 rounded-full border-2 border-outline-variant bg-surface"></div>
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary bg-surface px-1 text-lg" style="font-variation-settings: 'FILL' 1;">flight</span>
+</div>
+<span class="text-[10px] font-bold text-secondary mt-1 uppercase">Non-stop</span>
+</div>
+<div class="text-center md:text-right">
+<div class="text-xl font-extrabold">18:10</div>
+<div class="text-sm font-semibold text-on-surface-variant">JFK</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 w-full md:w-auto">
+<div class="text-2xl font-black text-primary">$612</div>
+<button class="w-full md:w-auto bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm tracking-tight hover:bg-secondary transition-all active:scale-95" onclick="this.parentElement.parentElement.parentElement.nextElementSibling.classList.toggle('hidden')">
+                                    View Fares
+                                </button>
+</div>
+</div>
+</div>
+<div class="hidden border-t border-surface-container bg-surface-container-low p-6 text-center text-on-surface-variant font-medium">
+                        Additional fare options loading...
+                    </div>
+</div>
+<!-- Ad/Banner Section -->
+<div class="rounded-2xl overflow-hidden relative h-40 group cursor-pointer">
+<img alt="Travel Banner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="aerial view of a tropical coastline with turquoise water and white sandy beaches bathed in bright midday sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDztUMs77pwooi7X40f7PMGG0Ww1Lu8JOmi4xP_Wrz2K9fF-6egMD3qTEFQSM0pMvEgMmqbgY_YF214herZvuyCysDHnhEtmCD7vCSDOPQiQACNFTEb7Lg-I2HjC_clZX3ZUFCA-filh3vVereYL7h4XaR1IQy3Bnj7zf3vcsDPXciUqtPUl60PAU-U-je-bArDJ4fvoecVYQSzd-5EW2neA4RAbb4PBm8uY-lMXKwVabu9GVJARRwcwSlpyGvtaETvHQsZs-sosdw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-indigo-950/80 to-transparent flex flex-col justify-center px-10">
+<span class="text-indigo-300 text-xs font-bold uppercase tracking-[0.2em] mb-2">Exclusive Offer</span>
+<h2 class="text-white text-xl font-bold max-w-xs">Save 15% on Luxury Hotels in Manhattan</h2>
+<div class="mt-4 flex items-center gap-2 text-white font-bold text-sm">
+                            Explore Hotels <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Fare Summary Column -->
+<div class="w-full lg:w-1/4">
+<div class="sticky top-24 bg-surface-container-lowest rounded-2xl border border-surface-container shadow-xl overflow-hidden">
+<div class="bg-primary px-6 py-4">
+<h2 class="text-white font-bold text-lg">Fare Summary</h2>
+</div>
+<div class="p-6" id="fare-summary-content">
+<!-- Default state -->
+<div class="flex flex-col items-center justify-center py-10 text-center" id="empty-selection">
+<span class="material-symbols-outlined text-5xl text-outline-variant mb-4">airplane_ticket</span>
+<p class="text-on-surface-variant text-sm font-medium">Select a flight fare to view the breakdown and proceed to checkout.</p>
+</div>
+<!-- Content template (hidden initially) -->
+<div class="hidden" id="active-selection">
+<div class="mb-6 pb-6 border-b border-surface-container">
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="text-xs font-bold text-secondary uppercase tracking-wider mb-1" id="summary-airline">Delta Air Lines</div>
+<div class="font-bold text-on-surface" id="summary-route">LHR → JFK</div>
+</div>
+<div class="text-[10px] bg-surface-container-high px-2 py-1 rounded text-on-surface font-bold uppercase" id="summary-class">Economy Flex</div>
+</div>
+<div class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span> Thursday, Oct 24
+                                </div>
+</div>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Base Fare</span>
+<span class="font-semibold" id="base-fare">$0.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Taxes &amp; Surcharges</span>
+<span class="font-semibold">$84.20</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Service Fee</span>
+<span class="font-semibold text-secondary">FREE</span>
+</div>
+</div>
+<div class="pt-6 border-t border-surface-container mb-8">
+<div class="flex justify-between items-end">
+<span class="font-bold text-on-surface">Total Amount</span>
+<span class="text-2xl font-black text-primary" id="total-amount">$0.00</span>
+</div>
+<p class="text-[10px] text-outline mt-2 text-right">Prices include all mandatory taxes and fees.</p>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-xl font-bold tracking-tight hover:bg-secondary shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-2">
+                                Confirm &amp; Book <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Help Card -->
+<div class="mt-6 bg-tertiary-container/10 border border-tertiary-container/20 rounded-2xl p-6">
+<h4 class="text-tertiary font-bold text-sm mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">verified_user</span> Price Guarantee
+                    </h4>
+<p class="text-on-tertiary-fixed-variant text-xs leading-relaxed">
+                        Find a lower price for the same flight within 24 hours and we'll refund the difference. Plus, enjoy 24/7 priority support.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-indigo-950/90 backdrop-blur-lg border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.3)] flex justify-around items-center px-4 pb-6 pt-3 rounded-t-3xl">
+<div class="flex flex-col items-center justify-center bg-indigo-500/20 text-white rounded-xl px-4 py-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-indigo-300/50 hover:text-indigo-200 transition-all">
+<span class="material-symbols-outlined">luggage</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Trips</span>
+</div>
+<div class="flex flex-col items-center justify-center text-indigo-300/50 hover:text-indigo-200 transition-all">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Offers</span>
+</div>
+<div class="flex flex-col items-center justify-center text-indigo-300/50 hover:text-indigo-200 transition-all">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+<!-- Functions Hooks Placeholder -->
+<script>
+        function selectFare(fareName, price) {
+            // Logic to update UI state
+            document.getElementById('empty-selection').classList.add('hidden');
+            document.getElementById('active-selection').classList.remove('hidden');
+            
+            document.getElementById('summary-class').innerText = fareName;
+            updateFareSummary(price);
+        }
+
+        function updateFareSummary(price) {
+            const taxes = 84.20;
+            const baseFareValue = price - taxes;
+            
+            document.getElementById('base-fare').innerText = '$' + baseFareValue.toFixed(2);
+            document.getElementById('total-amount').innerText = '$' + price.toLocaleString(undefined, {minimumFractionDigits: 2});
+            
+            // Visual feedback for change
+            const totalEl = document.getElementById('total-amount');
+            totalEl.classList.add('scale-110', 'text-secondary');
+            setTimeout(() => {
+                totalEl.classList.remove('scale-110', 'text-secondary');
+            }, 300);
+        }
+    </script>
+</body></html>
