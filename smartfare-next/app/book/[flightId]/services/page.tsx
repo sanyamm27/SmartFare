@@ -3,7 +3,6 @@
 import { useState, use } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import SeatMap from "@/app/components/SeatMap";
-import Header from "@/app/components/Header";
 import { motion, AnimatePresence } from "framer-motion";
 import { calculateTotalFare } from '@/lib/utils/fareCalculator';
 
@@ -48,6 +47,7 @@ export default function ServicesPage({ params }: { params: Promise<{ flightId: s
   const toParam = searchParams?.get("to") || "VTZ";
   const tripParam = searchParams?.get("trip") || "one-way";
   const fareTypeParam = searchParams?.get("fareType") || "Saver";
+  const dateParam = searchParams?.get("date") || "Saturday, 24 Oct";
 
   const [activeTab, setActiveTab] = useState<"seats" | "meals" | "baggage" | "premium">("seats");
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
@@ -86,7 +86,6 @@ export default function ServicesPage({ params }: { params: Promise<{ flightId: s
 
   return (
     <>
-      <Header />
       <main className="min-h-screen bg-surface pb-32">
         {/* Dynamic Header */}
         <div className="bg-slate-900 pt-32 pb-16 px-6">
@@ -94,9 +93,9 @@ export default function ServicesPage({ params }: { params: Promise<{ flightId: s
             <div className="flex flex-col">
               <div className="flex items-center gap-4 mb-2">
                 <span className="bg-indigo-500/30 text-indigo-200 px-3 py-1 rounded-md text-xs font-black tracking-widest uppercase">{decodedFlightId}</span>
-                <span className="text-slate-400 text-sm font-medium">Saturday, 24 Oct</span>
+                <span className="text-slate-400 text-sm font-medium">{dateParam}</span>
               </div>
-              <h1 className="text-3xl md:text-4xl font-medium tracking-tight">Mumbai (BOM) to Visakhapatnam (VTZ)</h1>
+              <h1 className="text-3xl md:text-4xl font-medium tracking-tight">{fromParam} to {toParam}</h1>
               <div className="flex items-center text-indigo-200 mt-4 w-[280px] justify-between">
                 <div className="flex flex-col items-center w-20">
                   <span className="text-2xl font-black text-white">15:40</span>

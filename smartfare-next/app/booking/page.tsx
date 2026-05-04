@@ -23,6 +23,7 @@ function BookingContent() {
   const toCode      = searchParams?.get("to") || "VTZ";
   const airlineParam = searchParams?.get("airline") || "Air India";
   const fareTypeParam = searchParams?.get("fareType") || "Saver";
+  const dateParam   = searchParams?.get("date") || "Saturday, 24 Oct";
   const seats       = searchParams?.get("seats") || "";
   const addonsArray = searchParams?.get("addonsArray") || "[]";
 
@@ -50,7 +51,8 @@ function BookingContent() {
       `&first=${encodeURIComponent(first)}&last=${encodeURIComponent(last)}` +
       `&passengers=${passengerCount}&seats=${seats}&addonsArray=${addonsArray}` +
       `&pNames=${pNamesParam}&fareType=${encodeURIComponent(fareTypeParam)}` +
-      `&contactEmail=${encodeURIComponent(contactEmail)}`
+      `&contactEmail=${encodeURIComponent(contactEmail)}` +
+      `&date=${encodeURIComponent(dateParam)}`
     );
   };
 
@@ -227,7 +229,7 @@ function BookingContent() {
                 <div className="bg-surface-container-low rounded-lg p-4 space-y-2">
                   <div className="flex items-center gap-3 text-sm">
                     <span className="material-symbols-outlined text-on-surface-variant">calendar_today</span>
-                    <span className="font-medium">Saturday, 24 Oct</span>
+                    <span className="font-medium">{dateParam}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm mt-2">
                     <span className="font-bold">15:40</span>

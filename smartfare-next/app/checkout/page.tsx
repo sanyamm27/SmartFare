@@ -39,6 +39,7 @@ function CheckoutContent() {
 
   const fromCode = searchParams?.get("from") || "BOM";
   const toCode = searchParams?.get("to") || "VTZ";
+  const dateParam = searchParams?.get("date") || "Saturday, 24 Oct";
   const firstName = searchParams?.get("first") || "";
   const lastName = searchParams?.get("last") || "";
   const passengerName = [firstName, lastName].filter(Boolean).join(" ") || "Unknown Passenger";
@@ -114,6 +115,7 @@ function CheckoutContent() {
         seats,
         addons,
         fareType,
+        date: dateParam,
       }),
     })
       .then((r) => r.json())
@@ -237,6 +239,7 @@ function CheckoutContent() {
                             seats,
                             addons,
                             fareType,
+                            date: dateParam,
                             bankName: "MOCK_BANK"
                           }),
                         });

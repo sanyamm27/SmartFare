@@ -23,7 +23,8 @@ export async function POST(req: Request) {
       seats,
       addons,
       fareType,
-      bankName
+      bankName,
+      date
     } = body;
 
     if (!amount || amount < 100) {
@@ -41,7 +42,7 @@ export async function POST(req: Request) {
       flightDetails: {
         origin: from || "BOM",
         destination: to || "VTZ",
-        date: "2026-10-24",
+        date: date || "2026-10-24",
         time: "15:40",
         flightCode: airline || "AI-000",
       },

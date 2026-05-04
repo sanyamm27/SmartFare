@@ -161,7 +161,8 @@ function FlightsContent() {
         `&from=${fromCode}` +
         `&to=${toCode}` +
         `&trip=${isRound ? 'round-trip' : 'one-way'}` +
-        `&fareType=${fareType}`
+        `&fareType=${fareType}` +
+        `&date=${encodeURIComponent(departureDate)}`
       );
     }
   };
